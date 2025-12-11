@@ -481,12 +481,35 @@ header.active .line-1 {
         /* border: 5px solid red; */
     }
 
-    .main img{
+    .main .name{
         width: 90vw;
         position: absolute;
         left: 6vw;
         top: 62vw;
         /* border: 5px solid red; */
+    }
+
+    .main .tag-section img{
+        height: 4vw;
+        width: auto;
+    }
+
+    .main .tag-1{
+        position: relative;
+        top: 30vw;
+        left: 60vw;
+    }
+
+    .main .tag-2{
+        position: relative;
+        top: 49vw;
+        left: 13vw;
+    }
+
+    .main .tag-3{
+        position: relative;
+        top: 63vw;
+        left: 56vw;
     }
 
     .section-1{
@@ -575,9 +598,6 @@ header.active .line-1 {
         right: -4vw;
         top: 0;
         z-index: -1;
-        /* top: 0; */
-        /* bottom: 54vw; */
-        /* border: 1px solid red; */
     }
 
     .section-2 .joey-2-txt{
@@ -605,38 +625,43 @@ header.active .line-1 {
         /* border: 1px solid red; */
     }
 
-    /* .section-2 .joey-2-txt .pizza{
-        width: 20vw;
-        position: relative;
-        left: 34vw;
-        bottom: 1.8vw;
-        font-size: 0;
-    } */
 
     .section-2 .section-2-img{
         display: flex;
         align-items: flex-end;
     }
-    .section-2  .pizza{
-        width: 20vw;
-        height: auto;
-        position: relative;
-        right: 8vw;
-        bottom: 5.6vw;
-        /* right: 34vw;
-        bottom: 1.8vw; */
-        /* font-size: 0; */
-    }
+    /* ... 기존 스타일 유지 ... */
 
+.section-2 .pizza {
+    /* 기존 스타일 */
+    width: 20vw;
+    height: auto;
+    position: relative;
+    right: 8vw;
+    bottom: 5.6vw;
+    
+    /* ✨ [추가] 클릭할 수 있다는 표시 */
+    cursor: pointer;
+    transition: transform 0.2s ease; /* 마우스 올렸을 때 살짝 움직이면 더 좋음 */
+}
 
-    .section-2 .joey-2{
-        width: 45vw;
-        position: absolute;
-        right: 0;
-        top: 40vw;
-        font-size: 0;
-        /* border: 1px solid red; */
-    }
+/* 마우스 올리면 피자가 살짝 커짐 (선택사항) */
+.section-2 .pizza:hover {
+    transform: scale(1.05) rotate(5deg);
+}
+
+.section-2 .joey-2 {
+    /* 기존 스타일 */
+    width: 45vw;
+    position: absolute;
+    right: 0;
+    top: 40vw;
+    font-size: 0;
+
+    /* ✨ [추가] 처음에는 투명하게 숨기기 */
+    opacity: 0; 
+    pointer-events: none; /* 안 보일 땐 클릭 안 되게 */
+}
 
     .section-3{
         width: 100vw;
@@ -788,7 +813,7 @@ header.active .line-1 {
     .section-6{
         width: 100vw;
         /* border: 1px solid red; */
-        background-image: url('../img/sandwich-bg.png');
+        background-image: url('./img/sandwich-bg.png');
         background-size: 100%;
         background-repeat: no-repeat;
         margin-top: 6vw;
